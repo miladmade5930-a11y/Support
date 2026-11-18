@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فاکتورساز | راهنما و پشتیبانی</title>
+<meta name="description" content="راهنما، پاسخ پرسش‌ها و راه‌های تماس با پشتیبانی برنامه فاکتورساز.">
+<!--
+  ویرایش سریع: فقط این چند مورد را عوض کنید
+  ۱) NAME-HERE  ← نام شما یا نام برند
+  ۲) YOUR_TELEGRAM  ← آیدی تلگرام بدون @
+  ۳) 98912XXXXXXX  ← شماره واتساپ با کد کشور و بدون صفر اول
+  ۴) you@example.com  ← ایمیل
+  ۵) رنگ‌ها در بخش :root در همین فایل است
+-->
+<style>
+:root{
+  --b1:#F4F8FE; --b2:#DCE8F8; --b3:#A9C6EC; --b4:#5B8FD6; --b5:#2457A8;
+  --ink:#12284A; --soft:#4A5F82;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--b1); color:var(--ink);
+  font-family:Vazirmatn,Tahoma,"Segoe UI",system-ui,sans-serif;
+  line-height:1.9; font-size:17px;
+}
+a{color:var(--b5)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--b4); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1000px; margin:0 auto; padding:0 20px}
+
+/* header */
+header.top{border-bottom:1px solid var(--b2); background:#fff}
+header.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:64px; flex-wrap:wrap}
+.brand{font-weight:800; font-size:20px; color:var(--b5); text-decoration:none}
+nav a{margin-inline-start:18px; text-decoration:none; color:var(--soft); font-size:15px}
+nav a:hover{color:var(--b5)}
+
+/* hero */
+.hero{padding:48px 0 56px; background:linear-gradient(180deg,#fff 0%,var(--b1) 100%)}
+.hero .wrap{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+h1{font-size:clamp(28px,5vw,42px); line-height:1.5; margin:0 0 12px; color:var(--ink)}
+.lead{color:var(--soft); margin:0 0 24px; max-width:34em}
+.btn{display:inline-block; background:var(--b5); color:#fff; text-decoration:none; padding:12px 26px; border-radius:10px; font-weight:700}
+.btn:hover{background:#1c4687}
+.btn.alt{background:transparent; color:var(--b5); border:1.5px solid var(--b3); margin-inline-start:10px}
+.btn.alt:hover{background:var(--b2)}
+
+/* invoice slip */
+.slip{
+  background:#fff; border:1.5px solid var(--b3); border-radius:6px;
+  padding:22px 22px 18px; transform:rotate(-1.6deg);
+  box-shadow:6px 6px 0 var(--b2);
+}
+.slip .hd{display:flex; justify-content:space-between; font-weight:700; border-bottom:2px solid var(--b5); padding-bottom:8px; margin-bottom:10px}
+.slip .hd span:last-child{color:var(--soft); font-weight:400; font-size:14px}
+.slip .row{display:flex; align-items:baseline; gap:8px; font-size:15px}
+.slip .row i{flex:1; border-bottom:1.5px dotted var(--b3); transform:translateY(-4px)}
+.slip .tot{margin-top:10px; padding-top:8px; border-top:2px solid var(--b5); font-weight:800; display:flex; justify-content:space-between}
+.slip .tot span:last-child{color:var(--b5)}
+
+/* sections */
+section{padding:48px 0; border-top:1px solid var(--b2)}
+h2{font-size:26px; margin:0 0 6px}
+.sub{color:var(--soft); margin:0 0 24px}
+
+/* contact */
+.contact a.line{
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  padding:16px 4px; border-bottom:1px solid var(--b2);
+  text-decoration:none; color:var(--ink);
+}
+.contact a.line:first-of-type{border-top:1px solid var(--b2)}
+.contact a.line:hover{background:#fff}
+.contact b{font-size:18px}
+.contact small{color:var(--soft); direction:ltr; unicode-bidi:plaintext}
+.note{margin-top:18px; background:var(--b2); border-radius:10px; padding:14px 18px; font-size:15px}
+
+/* faq */
+details{border-bottom:1px solid var(--b2); padding:4px 0}
+summary{cursor:pointer; font-weight:700; padding:12px 2px; list-style:none; display:flex; justify-content:space-between; gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; color:var(--b4); font-size:22px; line-height:1.4}
+details[open] summary::after{content:"−"}
+details p{margin:0 0 14px; color:var(--soft)}
+
+/* privacy */
+.prose{max-width:42em}
+.prose p{margin:0 0 14px}
+
+footer{border-top:1px solid var(--b2); padding:28px 0; color:var(--soft); font-size:14px; background:#fff}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .slip{transform:none; max-width:420px}
+  .btn.alt{margin:10px 0 0}
+  nav a{margin-inline-start:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">فاکتورساز</a>
+    <nav>
+      <a href="#contact">تماس</a>
+      <a href="#faq">پرسش‌های پرتکرار</a>
+      <a href="#privacy">حریم خصوصی</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>فاکتور بسازید، PDF بگیرید، همان لحظه بفرستید</h1>
+        <p class="lead">فاکتورساز یک برنامه اندروید فارسی با تاریخ شمسی است که همه اطلاعاتتان را فقط روی گوشی خودتان نگه می‌دارد. اگر سوالی دارید یا مشکلی پیش آمد، از همین‌جا با پشتیبانی در تماس باشید.</p>
+        <a class="btn" href="#contact">تماس با پشتیبانی</a>
+        <a class="btn alt" href="#faq">پرسش‌های پرتکرار</a>
+      </div>
+      <div class="slip" aria-hidden="true">
+        <div class="hd"><span>فاکتور شماره ۱۲۰</span><span>۱۴۰۵/۰۸/۲۷</span></div>
+        <div class="row"><span>کابل ۳×۲.۵</span><i></i><span>۲ حلقه</span></div>
+        <div class="row"><span>کلید و پریز</span><i></i><span>۱۲ عدد</span></div>
+        <div class="row"><span>اجرت نصب</span><i></i><span>۱ مورد</span></div>
+        <div class="tot"><span>جمع کل</span><span>۴٬۸۵۰٬۰۰۰ تومان</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>تماس با پشتیبانی</h2>
+      <p class="sub">از هر راهی که برایتان راحت‌تر است پیام بدهید.</p>
+      <a class="line" href="https://t.me/miladmade"><b>تلگرام</b><small>@miladmade</small></a>
+      <a class="line" href="https://wa.me/989126495930"><b>واتساپ</b><small>۰۹۱۲ ۶۴۹ ۵۹۳۰</small></a>
+      <a class="line" href="mailto:miladmade5930@gmail.com"><b>ایمیل</b><small>miladmade5930@gmail.com</small></a>
+      <p class="note">برای پاسخ سریع‌تر، در پیام‌تان بنویسید از کدام فروشگاه (بازار یا مایکت) نصب کرده‌اید و مشکل دقیقاً کجا پیش آمد. اگر ممکن است یک عکس از صفحه هم بفرستید.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap prose">
+      <h2>پرسش‌های پرتکرار</h2>
+      <p class="sub">پاسخ رایج‌ترین سوال‌ها.</p>
+
+      <details>
+        <summary>اطلاعات من کجا ذخیره می‌شود؟</summary>
+        <p>همه فاکتورها، مشتریان و کالاها فقط روی گوشی خودتان ذخیره می‌شود و به هیچ سرور یا حساب کاربری فرستاده نمی‌شود. با حذف برنامه یا پاک کردن اطلاعات برنامه، این اطلاعات از بین می‌رود؛ پس فاکتورهای مهم را به صورت PDF هم نگه دارید.</p>
+      </details>
+      <details>
+        <summary>چطور فاکتور را برای مشتری بفرستم؟</summary>
+        <p>بعد از ساخت فاکتور، خروجی PDF بگیرید و با گزینه اشتراک‌گذاری آن را در واتساپ، تلگرام یا هر برنامه دیگر بفرستید.</p>
+      </details>
+      <details>
+        <summary>چطور لیست کار بدون قیمت را برای همکارم بفرستم؟</summary>
+        <p>لیست را به صورت فایل از داخل برنامه ارسال کنید. همکارتان اگر همین برنامه را داشته باشد، فایل را باز می‌کند و فقط قیمت و تعداد را وارد می‌کند، بدون اینکه چیزی را دوباره تایپ کند.</p>
+      </details>
+      <details>
+        <summary>نسخه رایگان چه محدودیتی دارد؟</summary>
+        <p>نسخه رایگان تا ۵ فاکتور ذخیره می‌کند و روی خروجی آن واترمارک دارد. با یک بار خرید نسخه کامل از طریق فروشگاه (بازار یا مایکت)، این محدودیت‌ها برداشته می‌شود.</p>
+      </details>
+      <details>
+        <summary>لوگو، سربرگ و رنگ برنامه را چطور عوض کنم؟</summary>
+        <p>از بخش تنظیمات، لوگو و اطلاعات کسب‌وکار را وارد کنید و رنگ را از بین پالت‌های آماده انتخاب کنید یا رنگ دلخواه خودتان را بسازید.</p>
+      </details>
+      <details>
+        <summary>رمز برنامه را فراموش کرده‌ام. چه کنم؟</summary>
+        <p>از راه‌های بخش «تماس» به ما پیام بدهید و بنویسید دقیقاً چه اتفاقی افتاده، تا راهنمایی‌تان کنیم.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap prose">
+      <h2>حریم خصوصی</h2>
+      <p class="sub">خلاصه و ساده.</p>
+      <p>برنامه فاکتورساز ثبت‌نام و حساب کاربری ندارد و اطلاعات فاکتورها، مشتریان و کالاهای شما را جمع‌آوری یا به سرور ارسال نمی‌کند. همه آن‌ها فقط روی گوشی شما می‌ماند.</p>
+      <p>پرداخت نسخه کامل از طریق فروشگاه (بازار یا مایکت) انجام می‌شود و اطلاعات پرداخت شما دست ما نمی‌رسد.</p>
+      <p>اگر درباره حریم خصوصی سوالی دارید، از بخش <a href="#contact">تماس</a> بپرسید.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© میلاد سهرابی — فاکتورساز</div>
+</footer>
+
+</body>
+</html>
